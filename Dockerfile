@@ -15,8 +15,8 @@ RUN mvn clean package
 FROM openjdk:8-jre-slim
 
 # Copy the built jar file from the previous stage to the container
-COPY --from=build /build/target/spring-boot-hello-world-1.0.0-SNAPSHOT.jar /app/app.jar
-
+COPY --from=build /build/target/spring-boot-2-hello-world-1.0.2-SNAPSHOT.jar /app/app.jar
+#COPY target/spring-boot-2-hello-world-1.0.2-SNAPSHOT.jar app.jar
 # Set the working directory to the app folder
 WORKDIR /app/
 
